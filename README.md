@@ -1,5 +1,15 @@
 # 项目说明
 
+需要安装 node, npm, PM2，然后进入项目目录，运行：
+
+```js
+npm install # 安装依赖
+npm run build # 项目构建
+npm start # 启动服务
+```
+
+运行端口配置，在文件process.json
+
 ## 开发阶段命令
 
 ```s
