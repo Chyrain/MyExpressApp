@@ -1,0 +1,34 @@
+{
+  "apps": [{
+    "name": "MyExpressAPp",
+    "script": "bin/www",
+    "instances": 2,
+    "exec_mode": "cluster",
+    "interpreter": "/usr/local/bin/node",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": 3000
+    }
+  }, {
+    "name": "MyExpressAPp-test",
+    "script": "bin/www",
+    "instances": "max",
+    "exec_mode": "cluster",
+    "watch": true,
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 3001
+    },
+    "env_production": {
+      "NODE_ENV": "production",
+      "PORT": 3002
+    },
+    "interpreter": "/usr/local/bin/babel-node",
+    "interpreter_args": "--harmony",
+    "node_args": "--harmony",
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "error_file": "./logs/err.log",
+    "out_file": "./logs/out.log",
+    "pid_file": "./logs/app-id.pid"
+  }]
+}

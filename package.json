@@ -1,0 +1,35 @@
+{
+  "name": "myexpressapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon ./bin/www --exec babel-node",
+    "build": "babel src -d dist",
+    "serve": "NODE_ENV=production node ./bin/www",
+    "test": "mocha --require babel-register",
+    "start": "shell=(nvm use 7) && pm2 start ./process.json",
+    "restart": "pm2 restart ./process.json",
+    "stop": "pm2 stop ./process.json",
+    "killall": "npm run stop && pm2 delete ./process.json"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "pg": "^7.4.0",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "mocha": "^4.1.0",
+    "nodemon": "^1.14.7"
+  }
+}
